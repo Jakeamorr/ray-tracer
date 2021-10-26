@@ -1,4 +1,5 @@
 #include <iostream>
+#include "color.h"
 
 int main() {
     // Image
@@ -14,16 +15,10 @@ int main() {
     for (int y = image_height - 1; y >= 0; --y) {
         std::cerr << "\rScanlines remaining: " << y << ' ' << std::flush;
         for (int x = 0; x < image_width; ++x) {
-            auto r = double(x) / (image_width - 1);
-            auto g = double(y) / (image_height - 1);
-            auto b = 0.25;
-
-            // rgb values are normalized between 0 and 1, convert to value between 0-255
-            int ir = static_cast<int>(255.999 * r);
-            int ig = static_cast<int>(255.999 * g);
-            int ib = static_cast<int>(255.999 * b);
-
-            std::cout << ir << ' ' << ig << ' ' << ib << '\n';
+            color pixel_color(double(x) / (image_width - 1),
+                              double(y) / (image_height - 1),
+                              0.25);
+            write_color(std::cout, pixel_color);
         }
     }
 
