@@ -11,6 +11,7 @@ class ray {
         point3 origin() const { return orig; }
         point3 direction() const { return dir; }
 
+        // P(t) = A + tB ---- P(position), A(origin), B(ray direction)
         point3 at(double t) const {
             return orig + t*dir;
         }
