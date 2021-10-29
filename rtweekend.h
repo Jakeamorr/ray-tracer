@@ -6,6 +6,7 @@
 #include <memory>
 #include <cstdlib>
 #include <random>
+#include <chrono>
 
 // Usings
 using std::shared_ptr;
