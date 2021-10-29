@@ -117,4 +117,9 @@ vec3 random_in_unit_sphere() {
     }
 }
 
+// A replacement for the preceeding method that achieves true lamgertian reflection
+vec3 random_unit_vector() {
+    return unit_vector(random_in_unit_sphere());
+}
+
 #endif
